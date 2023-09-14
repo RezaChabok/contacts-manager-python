@@ -35,9 +35,6 @@ engine = create_engine("sqlite:///./mydb.db", echo = False)
 Base.metadata.create_all(bind = engine)
 Session = sessionmaker(bind = engine)
 session = Session()
-contact = Contact("Meti", "KHaligh", "09123455678", "05112345", "meti@gmail.com", "meti.ir", "15/12/1379")
-# session.add(contact)
-# session.commit()
 results = session.query(Contact).all()
 
 def main():
